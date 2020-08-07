@@ -24,6 +24,14 @@ public class Item {
 
     private int stock;
 
+    @Lob
+    @Basic(fetch = FetchType.EAGER)
+    private String mainImage;
+
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private String detailImage;
+
     @OneToMany(mappedBy = "item")
     private List<CategoryItem> categoryItems = new ArrayList<>();
 
