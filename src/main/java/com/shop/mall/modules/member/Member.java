@@ -1,6 +1,8 @@
 package com.shop.mall.modules.member;
 
+import com.shop.mall.modules.cart.Cart;
 import com.shop.mall.modules.order.Order;
+import com.shop.mall.modules.wishlist.Wishlist;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -28,4 +30,11 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Cart> carts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Wishlist> wishlists = new ArrayList<>();
+
 }
